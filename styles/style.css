@@ -1,0 +1,118 @@
+@import url("https://fonts.googleapis.com/css2?family=Akshar:wght@300;400;500;600;700&display=swap");
+
+body {
+  margin: 0;
+  font-family: "Akshar", sans-serif;
+  background-color: rgb(255, 232, 196);
+}
+
+#title-box h1 {
+  font-size: 75px;
+  font-weight: 400;
+}
+
+#title-box p,
+#instructions-box p,
+#name-box {
+  font-size: 20px;
+  font-weight: 200;
+}
+
+label {
+  font-size: 20px;
+  font-weight: 500;
+}
+
+#instructions-box h2 {
+  font-size: 45px;
+  font-weight: 500;
+}
+
+.underline-text {
+  text-decoration: underline;
+}
+
+.bold-text {
+  font-weight: bold;
+}
+
+#title-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+}
+
+#instructions-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+}
+
+#name-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+  margin: 70px 0px 0px 0px;
+}
+
+label {
+  margin-bottom: 15px;
+}
+
+input[type="text"] {
+  color: #a9a9a9;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 1px 3px 4px 2px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  padding: 10px 50px;
+  border-radius: 5px; /*up to date browsers support this, but you can add prefixes if you want*/
+  border: 0;
+}
+
+.game-button {
+  background-color: red;
+  border: none;
+  border-radius: 10px;
+  color: white;
+  padding: 15px 75px;
+  font-size: 16px;
+  font-family: "Akshar", sans-serif;
+}
+
+.game-button:hover {
+  background-color: black;
+  border-radius: 75px;
+  cursor: pointer;
+  box-shadow: 1px 3px 4px 2px rgba(0, 0, 0, 0.2);
+  transition-duration: 0.4s;
+}
+
+.game-button:active {
+  background-color: white;
+  color: black;
+  border-radius: 75px;
+  cursor: pointer;
+  box-shadow: 1px 3px 4px 2px rgba(0, 0, 0, 0.2);
+  transition-duration: 0.5s;
+}
+
+#back-button {
+  margin-top: 35px;
+  padding: 15px 100px;
+}
+
+#my-canvas {
+  background-color: red;
+}
+
+#canvas-div {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 70px;
+  border-radius: 20px;
+}
