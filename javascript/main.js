@@ -7,7 +7,6 @@ const backButton = document.querySelector("#back-button");
 const reStartButton = document.querySelector("#restart-button");
 const canvas = document.querySelector("#my-canvas");
 const context = canvas.getContext("2d");
-let game; // Declara una variable game, que será de utilidad más tarde a la hora de crear un objeto nuevo game.
 
 // * Funciones de mantenimiento de estados
 
@@ -23,9 +22,8 @@ const startGame = () => {
   // Empezamos nuestro juego.
   // Nuestro juego al completo será una sola clase.
   // Crearemos, por tanto, un nuevo objeto de la clase Game.
-
-  game = new Game(); // Crea un nuevo objeto "game" basado en la clase "Game". Esto se asigna a la variable global "game" declarada en la línea 8 de "main.js".
-  game.gameLoop(); // Dentro de nuestro objeto "game", estamos accediendo al método gameLoop, definido dentro de la clase "Game", por lo cual, lo contiene.
+  let game = new Game();
+  game.gameLoop();
 };
 
 // * Añadir .addEventListeners

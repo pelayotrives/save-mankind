@@ -8,11 +8,13 @@ class Game {
 
   gameLoop = () => {
     // 1.) Borrar el canvas
+    // console.log("Iniciando.");
     context.clearRect(0, 0, canvas.width, canvas.height);
     // 2.) Acciones o movimientos de los elementos, como creaciones, saltos...
 
     // 3.) Dibujar los elementos
     context.drawImage(this.background, 0, 0, canvas.width, canvas.height); // Background lo hemos declarado en la propia clase, por lo que no hace falta ahondar en sus propiedades.
     // 4.) Control y recursión
+    requestAnimationFrame(this.gameLoop);
   };
 }
