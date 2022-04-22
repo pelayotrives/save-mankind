@@ -1,5 +1,5 @@
 
-# Save Humanity
+# Save Mankind
 
 Save Mankind is a basic game built in JavaScript, HTML, and CSS. It is based on an infinite loop where the user must capture the maximum amount of points possible, not lose the lives of his character and avoid colliding with asteroids and UFOs. It is created to improve the management of classes in JS and to be able to create visual interfaces from canvas.
 
