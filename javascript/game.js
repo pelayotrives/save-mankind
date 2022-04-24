@@ -3,6 +3,7 @@ class Game {
     this.background = new Image(); // Creamos el objeto que contendrá nuestra imagen de fondo.
     this.background.src = "./images/fondo.png"; // Le damos lugar de acceso.
     this.hero = new Hero();
+    this.asteroid = new Asteroid();
   }
 
   // Método gameLoop que ejecuta el juego una y otra vez.
@@ -15,9 +16,11 @@ class Game {
     // 2.) Acciones o movimientos de los elementos, como creaciones, saltos...
     console.log(this.hero);
     this.hero.heroFriction();
+    this.asteroid.moveAsteroid();
     // 3.) Dibujar los elementos
     context.drawImage(this.background, 0, 0, canvas.width, canvas.height); // Background lo hemos declarado en la propia clase, por lo que no hace falta ahondar en sus propiedades.
     this.hero.drawHero();
+    this.asteroid.drawAsteroid();
 
     // 4.) Control y recursión
     requestAnimationFrame(this.gameLoop);
