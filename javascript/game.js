@@ -16,35 +16,41 @@ class Game {
   }
 
   addAsteroids = () => {
-    if (this.asteroidArray[this.asteroidArray.length - 1].asteroidX < 350) {
+    if (this.asteroidArray[this.asteroidArray.length - 1].asteroidX < 300) {
       let newAsteroid = new Asteroid();
       this.asteroidArray.push(newAsteroid);
     }
+
+    // Otro método para hacer lo mismo:
+    // setInterval( () => {
+    //   let newAsteroid = new Asteroid();
+    //   this.asteroidArray.push(newAsteroid);
+    // }, 2000);
   }
 
   addMiniAsteroids = () => {
-    if (this.miniAsteroidArray[this.miniAsteroidArray.length - 1].miniAsteroidX < 350) {
+    if (this.miniAsteroidArray[this.miniAsteroidArray.length - 1].miniAsteroidX < 500) {
       let newMiniAsteroid = new Miniasteroid();
       this.miniAsteroidArray.push(newMiniAsteroid);
     }
   }
 
   addLife = () => {
-    if (this.lifeArray[this.lifeArray.length - 1].lifeX < 350) {
+    if (this.lifeArray[this.lifeArray.length - 1].lifeX < -4200) {
       let newLife = new Life();
       this.lifeArray.push(newLife);
     }
   }
 
   addPoints = () => {
-    if (this.pointsArray[this.pointsArray.length - 1].pointsX < 350) {
+    if (this.pointsArray[this.pointsArray.length - 1].pointsX < -800) {
       let newPoints = new Points();
       this.pointsArray.push(newPoints);
     }
   }
 
   addUfos = () => {
-    if (this.ufoArray[this.ufoArray.length - 1].ufoX < 350) {
+    if (this.ufoArray[this.ufoArray.length - 1].ufoX < -100) {
       let newUfo = new Ufo();
       this.ufoArray.push(newUfo);
     }
