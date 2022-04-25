@@ -6,7 +6,7 @@ class Hero {
     this.heroW = 196; // Width del héroe.
     this.heroH = 63; // Height del héroe.
     this.heroPresure = 0.5; // Presión gravitacional del héroe.
-    this.heroSpeed = 30; // Velocidad del héroe.
+    this.heroSpeed = 15; // Velocidad del héroe.
     this.image = new Image(); // Creamos el objeto que contendrá nuestra imagen.
     this.image.src = "./images/heroe.png"; // Le damos lugar de acceso.
   }

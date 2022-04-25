@@ -1,7 +1,7 @@
 class Miniasteroid {
     constructor() {
       // Propiedades del meteorito.
-      this.miniAsteroidX = 700; // Posición del eje de X del meteorito.
+      this.miniAsteroidX = canvas.width; // Posición del eje de X del meteorito.
       this.miniAsteroidY = 310; // Posición del eje de Y del meteorito.
       this.miniAsteroidW = 20; // Width del meteorito.
       this.miniAsteroidH = 25; // Height del meteorito.

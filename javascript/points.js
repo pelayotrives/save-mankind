@@ -1,7 +1,7 @@
 class Points {
     constructor() {
       // Propiedades de vida.
-      this.pointsX = 700; // Posición del eje de X de vida.
+      this.pointsX = canvas.width; // Posición del eje de X de vida.
       this.pointsY = 515; // Posición del eje de Y de vida.
       this.pointsW = 40; // Width de vida.
       this.pointsH = 40; // Height de vida.

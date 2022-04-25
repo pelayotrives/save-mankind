@@ -1,7 +1,7 @@
 class Asteroid {
   constructor() {
     // Propiedades del meteorito.
-    this.asteroidX = 700; // Posición del eje de X del meteorito.
+    this.asteroidX = canvas.width; // Posición del eje de X del meteorito.
     this.asteroidY = 100; // Posición del eje de Y del meteorito.
     this.asteroidW = 75; // Width del meteorito.
     this.asteroidH = 63; // Height del meteorito.

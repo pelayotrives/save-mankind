@@ -1,7 +1,7 @@
 class Ufo {
   constructor() {
     // Propiedades del meteorito.
-    this.ufoX = 700; // Posición del eje de X del meteorito.
+    this.ufoX = canvas.width; // Posición del eje de X del meteorito.
     this.ufoY = 620; // Posición del eje de Y del meteorito.
     this.ufoW = 150; // Width del meteorito.
     this.ufoH = 36; // Height del meteorito.

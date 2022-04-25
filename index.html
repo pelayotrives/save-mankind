@@ -6,8 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Save Mankind | A 2D game to rescue them all!</title>
     <link rel="stylesheet" href="styles/style.css" />
+    <link rel="shortcut icon" href="./images/favicon.png" type="image/x-icon">  <!-- Favicon -->
   </head>
   <body>
+
     <div class="container">
       <!-- Start Screen w/ instructions and titles. -->
       <div id="start-screen" class="container">
@@ -31,7 +33,7 @@
           </p>
           <p>
             Avoid the UFOs and the asteroids. Once they hit you, you will
-            <span class="underline-text">lose a life</span>. No hearts, no game!
+            <span class="underline-text">lose a life</span>. No hearts, no game! :(
           </p>
           <p>
             Touch the hearts and the coins to gain an
@@ -40,7 +42,7 @@
           </p>
           <p>
             You can have a total of 3 lives. If you touch a heart while you have
-            this, you won't earn anything.
+            all of them, you won't earn anything.
           </p>
         </div>
 
@@ -60,23 +62,27 @@
           <h3>Time score: <span id="time-score">0</span> seconds</h3>
         </div>
         <canvas id="my-canvas" width="800" height="800"></canvas>
-        <button id="back-button" class="game-button" onclick="window.location.reload()">Back</button>
+        <button id="back-button" class="game-button">Back</button>
         <!-- onclick="window.location.reload()" asignado a un "button", permite que volvamos a la página anterior de forma inmediata. -->
       </div>
 
       <!-- Game over -->
       <div id="gameover-screen" class="container">
+        <h1>Wow! Nice game!</h1>
+        <h3>Your final score is: <span id="points-score">0</span> points</h3>
         <button id="restart-button" class="game-button">Play Again!</button>
       </div>
     </div>
 
-    <script src="./javascript/asteroid.js"></script>
+    <script src="./javascript/sounds.js"></script>
     <script src="./javascript/game.js"></script>
-    <script src="./javascript/hero.js"></script>
-    <script src="./javascript/life.js"></script>
     <script src="./javascript/main.js"></script>
+    <script src="./javascript/hero.js"></script>
+    <script src="./javascript/asteroid.js"></script>
+    <script src="./javascript/life.js"></script>
     <script src="./javascript/miniasteroid.js"></script>
     <script src="./javascript/points.js"></script>
     <script src="./javascript/ufo.js"></script>
+
   </body>
 </html>
