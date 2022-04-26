@@ -17,11 +17,11 @@ class Hero {
   };
 
   heroFriction = () => {
-    if ((this.heroY > canvas.height / 2 + this.heroPresure) && (this.heroY < canvas.height - this.heroPresure)){
+    if ((this.heroY > canvas.height / 2 + this.heroPresure) && (this.heroY < canvas.height - this.heroH)){
       this.heroY = this.heroY + this.heroPresure;
     }
     
-    if ((this.heroY <= canvas.height / 2)  &&  (this.heroY > 0 + this.heroH) ){
+    if ((this.heroY <= canvas.height / 2)  &&  (this.heroY > 0 + this.heroSpeed) ){
       this.heroY = this.heroY - this.heroPresure;
     }
   };

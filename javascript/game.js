@@ -4,6 +4,7 @@ class Game {
     this.background.src = "./images/fondo.png"; // * Le damos lugar de acceso.
 
     this.hero = new Hero();
+    this.hitSound = new Sounds();
 
     this.asteroidArray = [ new Asteroid(canvas.width * 1.1, Math.random() * 737) ]; // * Necesitamos un array, ya no podemos hacer un this.asteroid = new Asteroid(); -----> Los parámetros de entrada vienen dados en que en el constructor de asteroid.js, hemos definido dos parámetros de entrada para poder randomizar las posiciones de cada objeto de este array asteroid.
     this.miniAsteroidArray = [ new Miniasteroid(canvas.width, Math.random() * 775) ]; // * Necesitamos un array, ya no podemos hacer un this.miniAsteroid = new MiniAsteroid(); -----> Los parámetros de entrada vienen dados en que en el constructor de miniasteroid.js, hemos definido dos parámetros de entrada para poder randomizar las posiciones de cada objeto de este array miniasteroid.
@@ -59,7 +60,8 @@ class Game {
 
   // *! - Métodos de comparativa de colisión.
 
-  // Basados en:
+  // ?    Basados en:
+
   // ?    if (rect1.x < rect2.x + rect2.width &&
   // ?    rect1.x + rect1.width > rect2.x &&
   // ?    rect1.y < rect2.y + rect2.height &&
@@ -72,6 +74,7 @@ class Game {
         this.hero.heroY < eachAsteroidArr.asteroidY + eachAsteroidArr.asteroidH &&
         this.hero.heroH + this.hero.heroY > eachAsteroidArr.asteroidY) {
           console.log("Colision con asteroide.");
+          this.hitSound.injuryHit(); // * Como hemos creado un objeto hitSound de la clase Sounds, podemos acceder a sus métodos a través de this.hitSound.injuryHit(). Cada vez que colisione nuestro héroe sonará esto.
           this.asteroidArray.splice(index, 1); // * Con .splice(), el primer número es la posición del objeto del array que queremos quitar. El segundo es CUÁNTOS OBJETOS a partir de esa posición queremos quitar.
       }
     });
@@ -84,6 +87,7 @@ class Game {
         this.hero.heroY < eachMiniAsteroidArr.miniAsteroidY + eachMiniAsteroidArr.miniAsteroidH &&
         this.hero.heroH + this.hero.heroY > eachMiniAsteroidArr.miniAsteroidY) {
           console.log("Colision con mini-asteroide.");
+          this.hitSound.injuryHit(); // * Como hemos creado un objeto hitSound de la clase Sounds, podemos acceder a sus métodos a través de this.hitSound.injuryHit(). Cada vez que colisione nuestro héroe sonará esto.
           this.miniAsteroidArray.splice(index, 1); // * Con .splice(), el primer número es la posición del objeto del array que queremos quitar. El segundo es CUÁNTOS OBJETOS a partir de esa posición queremos quitar.
 
       }
@@ -92,12 +96,12 @@ class Game {
 
   heroUfoCollision = () => {
     this.ufoArray.forEach( (eachUfoArr, index) => { // * Pasamos al forEach un parámetro de entrada y un index. El each para la comparativa de colisión y el index para gestionar la eliminación del objeto en el array si existe colisión.
-      console.log(this.hero.heroY, eachUfoArr.ufoY + eachUfoArr.ufoH);
       if (this.hero.heroX < eachUfoArr.ufoX + eachUfoArr.ufoW &&
         this.hero.heroX + this.hero.heroW > eachUfoArr.ufoX &&
         this.hero.heroY < eachUfoArr.ufoY + eachUfoArr.ufoH &&
         this.hero.heroH + this.hero.heroY > eachUfoArr.ufoY) {
           console.log("Colision con OVNI.");
+          this.hitSound.injuryHit(); // * Como hemos creado un objeto hitSound de la clase Sounds, podemos acceder a sus métodos a través de this.hitSound.injuryHit(). Cada vez que colisione nuestro héroe sonará esto.
           this.ufoArray.splice(index, 1); // * Con .splice(), el primer número es la posición del objeto del array que queremos quitar. El segundo es CUÁNTOS OBJETOS a partir de esa posición queremos quitar.
       }
     });
@@ -110,6 +114,7 @@ class Game {
         this.hero.heroY < eachLifeArr.lifeY + eachLifeArr.lifeH &&
         this.hero.heroH + this.hero.heroY > eachLifeArr.lifeY) {
           console.log("Colision con vida.");
+          this.hitSound.lifeHit(); // * Como hemos creado un objeto hitSound de la clase Sounds, podemos acceder a sus métodos a través de this.hitSound.injuryHit(). Cada vez que colisione nuestro héroe sonará esto.
           this.lifeArray.splice(index, 1); // * Con .splice(), el primer número es la posición del objeto del array que queremos quitar. El segundo es CUÁNTOS OBJETOS a partir de esa posición queremos quitar.
       }
     });
@@ -122,6 +127,7 @@ class Game {
         this.hero.heroY < eachPointsArr.pointsY + eachPointsArr.pointsH &&
         this.hero.heroH + this.hero.heroY > eachPointsArr.pointsY) {
           console.log("Colision con puntos.");
+          this.hitSound.pointsHit(); // * Como hemos creado un objeto hitSound de la clase Sounds, podemos acceder a sus métodos a través de this.hitSound.injuryHit(). Cada vez que colisione nuestro héroe sonará esto.
           this.pointsArray.splice(index, 1); // * Con .splice(), el primer número es la posición del objeto del array que queremos quitar. El segundo es CUÁNTOS OBJETOS a partir de esa posición queremos quitar.
       }
     });

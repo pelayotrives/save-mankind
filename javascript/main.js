@@ -64,10 +64,10 @@ const startGame = () => {
 };
 
 const keyPressed = (event) => {
-  if (event.code === "ArrowUp" && game.hero.heroY > game.hero.heroH) {
+  if (event.code === "ArrowUp" && game.hero.heroY > game.hero.heroSpeed) {
     console.log(game.hero.heroY);
     game.hero.upHero();
-  } else if (event.code === "ArrowDown" && game.hero.heroY < canvas.height) {
+  } else if (event.code === "ArrowDown" && game.hero.heroY < canvas.height - 70) {
     game.hero.downHero();
     console.log(game.hero.heroY);
   }
