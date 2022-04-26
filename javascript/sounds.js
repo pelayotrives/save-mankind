@@ -7,19 +7,21 @@ class Sounds {
 
   clickSound = () => {
     this.buttonSound.preload = "auto";
-    this.buttonSound.volume = 0.2;
     this.buttonSound.play();
+    this.buttonSound.volume = 0.1;
   };
 
   menuMusic = () => {
     this.mainMenuMusic.preload = "auto";
     this.mainMenuMusic.play();
-    this.buttonSound.volume = 0.1;
+    this.mainMenuMusic.volume = 0.05;
   };
 
   mainMusic = () => {
     this.backgroundMusic.preload = "auto";
     this.backgroundMusic.play();
+    this.backgroundMusic.volume = 0.4;
     this.backgroundMusic.loop = true;
   };
 }
+       

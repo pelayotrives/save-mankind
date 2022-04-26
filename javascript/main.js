@@ -53,7 +53,6 @@ const startGame = () => {
   music.mainMusic();
   music.clickSound();
   music.mainMenuMusic.pause();
-  // music.mainMenuMusic.currentTime = 0;
 
   // Empezamos nuestro juego.
   // Nuestro juego al completo será una sola clase.
@@ -65,12 +64,12 @@ const startGame = () => {
 };
 
 const keyPressed = (event) => {
-  if (event.code === "ArrowUp") {
-    console.log("Up.");
+  if (event.code === "ArrowUp" && game.hero.heroY > game.hero.heroH) {
+    console.log(game.hero.heroY);
     game.hero.upHero();
-  } else if (event.code === "ArrowDown") {
-    console.log("Down.");
+  } else if (event.code === "ArrowDown" && game.hero.heroY < canvas.height) {
     game.hero.downHero();
+    console.log(game.hero.heroY);
   }
 };
 

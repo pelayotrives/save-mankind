@@ -1,8 +1,8 @@
 class Life {
-    constructor() {
+    constructor(xParam, yParam) {
       // Propiedades de vida.
-      this.lifeX = canvas.width; // Posición del eje de X de vida.
-      this.lifeY = 205; // Posición del eje de Y de vida.
+      this.lifeX = xParam; // Posición del eje de X de vida.
+      this.lifeY = yParam; // Posición del eje de Y de vida.
       this.lifeW = 40; // Width de vida.
       this.lifeH = 34; // Height de vida.
       this.lifeSpeed = 2.5; // Velocidad de vida.
