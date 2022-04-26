@@ -13,7 +13,7 @@ class Hero {
 
   // Métodos del héroe
   drawHero = () => {
-    context.drawImage(this.image, this.heroX, this.heroY - this.heroH, this.heroW, this.heroH);
+    context.drawImage(this.image, this.heroX, this.heroY, this.heroW, this.heroH);
   };
 
   heroFriction = () => {

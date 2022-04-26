@@ -1,7 +1,7 @@
 class Game {
   constructor() {
-    this.background = new Image(); // Creamos el objeto que contendrá nuestra imagen de fondo.
-    this.background.src = "./images/fondo.png"; // Le damos lugar de acceso.
+    this.background = new Image(); // * Creamos el objeto que contendrá nuestra imagen de fondo.
+    this.background.src = "./images/fondo.png"; // * Le damos lugar de acceso.
 
     this.hero = new Hero();
 
@@ -17,7 +17,7 @@ class Game {
   // *! - Métodos de adición al array y comparativa con el último elemento.
 
   addAsteroids = () => {
-    if (this.asteroidArray[this.asteroidArray.length - 1].asteroidX < 400) {
+    if ( (this.asteroidArray.length === 0) || this.asteroidArray[this.asteroidArray.length - 1].asteroidX < 400) {
       let newAsteroid = new Asteroid(canvas.width, Math.random() * 737);
       this.asteroidArray.push(newAsteroid);
     }
@@ -30,93 +30,99 @@ class Game {
   }
 
   addMiniAsteroids = () => {
-    if (this.miniAsteroidArray[this.miniAsteroidArray.length - 1].miniAsteroidX < 750) {
-      let newMiniAsteroid = new Miniasteroid(900, Math.random() * 775);
-      this.miniAsteroidArray.push(newMiniAsteroid);
+    if ( (this.miniAsteroidArray.length === 0) || this.miniAsteroidArray[this.miniAsteroidArray.length - 1].miniAsteroidX < 750) { // * Tenemos que hacer comparativa. Si el array está vacío (porque se ha eliminado el elemento anterior al haber chocado el héroe, por lo que estará vacío) O si el anterior objeto está en la posición precisa para crear uno nuevo...
+      let newMiniAsteroid = new Miniasteroid(900, Math.random() * 775); // * Añadimos el nuevo objeto en la posición establecida...
+      this.miniAsteroidArray.push(newMiniAsteroid); // * Y cargamos dicho objeto al array.
     }
   }
 
   addLife = () => {
-    if (this.lifeArray[this.lifeArray.length - 1].lifeX < -4200) {
-      let newLife = new Life(4600, Math.random() * 765);
-      this.lifeArray.push(newLife);
+    if ( (this.lifeArray.length === 0) || this.lifeArray[this.lifeArray.length - 1].lifeX < -4200) { // * Tenemos que hacer comparativa. Si el array está vacío (porque se ha eliminado el elemento anterior al haber chocado el héroe, por lo que estará vacío) O si el anterior objeto está en la posición precisa para crear uno nuevo...
+      let newLife = new Life(4600, Math.random() * 765); // * Añadimos el nuevo objeto en la posición establecida...
+      this.lifeArray.push(newLife); // * Y cargamos dicho objeto al array.
     }
   }
 
   addPoints = () => {
-    if (this.pointsArray[this.pointsArray.length - 1].pointsX < -800) {
-      let newPoints = new Points(2500, Math.random() * 760);
-      this.pointsArray.push(newPoints);
+    if ( (this.pointsArray.length === 0) || (this.pointsArray[this.pointsArray.length - 1].pointsX < -800)) { // * Tenemos que hacer comparativa. Si el array está vacío (porque se ha eliminado el elemento anterior al haber chocado el héroe, por lo que estará vacío) O si el anterior objeto está en la posición precisa para crear uno nuevo...
+      let newPoints = new Points(2500, Math.random() * 760); // * Añadimos el nuevo objeto en la posición establecida...
+      this.pointsArray.push(newPoints); // * Y cargamos dicho objeto al array.
     }
   }
 
   addUfos = () => {
-    if (this.ufoArray[this.ufoArray.length - 1].ufoX < -100) {
-      let newUfo = new Ufo(1200, Math.random() * 764);
-      this.ufoArray.push(newUfo);
+    if ( (this.ufoArray.length === 0) || (this.ufoArray[this.ufoArray.length - 1].ufoX < -100)) { // * Tenemos que hacer comparativa. Si el array está vacío (porque se ha eliminado el elemento anterior al haber chocado el héroe, por lo que estará vacío) O si el anterior objeto está en la posición precisa para crear uno nuevo...
+      let newUfo = new Ufo(1200, Math.random() * 764); // * Añadimos el nuevo objeto en la posición establecida...
+      this.ufoArray.push(newUfo); // * Y cargamos dicho objeto al array.
     }
   }
 
   // *! - Métodos de comparativa de colisión.
 
+  // Basados en:
+  // ?    if (rect1.x < rect2.x + rect2.width &&
+  // ?    rect1.x + rect1.width > rect2.x &&
+  // ?    rect1.y < rect2.y + rect2.height &&
+  // ?    rect1.height + rect1.y > rect2.y) {}
+
   heroAsteroidCollision = () => {
-    this.asteroidArray.forEach( (eachAsteroidArr, index) => {
+    this.asteroidArray.forEach( (eachAsteroidArr, index) => { // * Pasamos al forEach un parámetro de entrada y un index. El each para la comparativa de colisión y el index para gestionar la eliminación del objeto en el array si existe colisión.
       if (this.hero.heroX < eachAsteroidArr.asteroidX + eachAsteroidArr.asteroidW &&
         this.hero.heroX + this.hero.heroW > eachAsteroidArr.asteroidX &&
         this.hero.heroY < eachAsteroidArr.asteroidY + eachAsteroidArr.asteroidH &&
         this.hero.heroH + this.hero.heroY > eachAsteroidArr.asteroidY) {
           console.log("Colision con asteroide.");
-          this.asteroidArray.splice[index, 1];
+          this.asteroidArray.splice(index, 1); // * Con .splice(), el primer número es la posición del objeto del array que queremos quitar. El segundo es CUÁNTOS OBJETOS a partir de esa posición queremos quitar.
       }
     });
-    //? console.log(this.asteroidArray)
   }
 
   heroMiniAsteroidCollision = () => {
-    this.miniAsteroidArray.forEach( (eachMiniAsteroidArr, index) => {
+    this.miniAsteroidArray.forEach( (eachMiniAsteroidArr, index) => { // * Pasamos al forEach un parámetro de entrada y un index. El each para la comparativa de colisión y el index para gestionar la eliminación del objeto en el array si existe colisión.
       if (this.hero.heroX < eachMiniAsteroidArr.miniAsteroidX + eachMiniAsteroidArr.miniAsteroidW &&
         this.hero.heroX + this.hero.heroW > eachMiniAsteroidArr.miniAsteroidX &&
         this.hero.heroY < eachMiniAsteroidArr.miniAsteroidY + eachMiniAsteroidArr.miniAsteroidH &&
         this.hero.heroH + this.hero.heroY > eachMiniAsteroidArr.miniAsteroidY) {
           console.log("Colision con mini-asteroide.");
-          this.miniAsteroidArray.splice[index, 1];
+          this.miniAsteroidArray.splice(index, 1); // * Con .splice(), el primer número es la posición del objeto del array que queremos quitar. El segundo es CUÁNTOS OBJETOS a partir de esa posición queremos quitar.
 
       }
     });
   }
 
   heroUfoCollision = () => {
-    this.ufoArray.forEach( (eachUfoArr, index) => {
+    this.ufoArray.forEach( (eachUfoArr, index) => { // * Pasamos al forEach un parámetro de entrada y un index. El each para la comparativa de colisión y el index para gestionar la eliminación del objeto en el array si existe colisión.
+      console.log(this.hero.heroY, eachUfoArr.ufoY + eachUfoArr.ufoH);
       if (this.hero.heroX < eachUfoArr.ufoX + eachUfoArr.ufoW &&
         this.hero.heroX + this.hero.heroW > eachUfoArr.ufoX &&
         this.hero.heroY < eachUfoArr.ufoY + eachUfoArr.ufoH &&
         this.hero.heroH + this.hero.heroY > eachUfoArr.ufoY) {
           console.log("Colision con OVNI.");
-          this.ufoArray.splice[index, 1];
+          this.ufoArray.splice(index, 1); // * Con .splice(), el primer número es la posición del objeto del array que queremos quitar. El segundo es CUÁNTOS OBJETOS a partir de esa posición queremos quitar.
       }
     });
   }
 
   heroLifeCollision = () => {
-    this.lifeArray.forEach( (eachLifeArr, index) => {
+    this.lifeArray.forEach( (eachLifeArr, index) => { // * Pasamos al forEach un parámetro de entrada y un index. El each para la comparativa de colisión y el index para gestionar la eliminación del objeto en el array si existe colisión.
       if (this.hero.heroX < eachLifeArr.lifeX + eachLifeArr.lifeW &&
         this.hero.heroX + this.hero.heroW > eachLifeArr.lifeX &&
         this.hero.heroY < eachLifeArr.lifeY + eachLifeArr.lifeH &&
         this.hero.heroH + this.hero.heroY > eachLifeArr.lifeY) {
           console.log("Colision con vida.");
-          this.lifeArray.splice[index, 1];
+          this.lifeArray.splice(index, 1); // * Con .splice(), el primer número es la posición del objeto del array que queremos quitar. El segundo es CUÁNTOS OBJETOS a partir de esa posición queremos quitar.
       }
     });
   }
 
   heroPointsCollision = () => {
-    this.pointsArray.forEach( (eachPointsArr, index) => {
+    this.pointsArray.forEach( (eachPointsArr, index) => { // * Pasamos al forEach un parámetro de entrada y un index. El each para la comparativa de colisión y el index para gestionar la eliminación del objeto en el array si existe colisión.
       if (this.hero.heroX < eachPointsArr.pointsX + eachPointsArr.pointsW &&
         this.hero.heroX + this.hero.heroW > eachPointsArr.pointsX &&
         this.hero.heroY < eachPointsArr.pointsY + eachPointsArr.pointsH &&
         this.hero.heroH + this.hero.heroY > eachPointsArr.pointsY) {
           console.log("Colision con puntos.");
-          this.pointsArray.splice[index, 1];
+          this.pointsArray.splice(index, 1); // * Con .splice(), el primer número es la posición del objeto del array que queremos quitar. El segundo es CUÁNTOS OBJETOS a partir de esa posición queremos quitar.
       }
     });
   }
@@ -141,11 +147,11 @@ class Game {
     this.addPoints() // * Invocamos al método para ir añadiendo elementos al array.
     this.addUfos(); // * Invocamos al método para ir añadiendo elementos al array.
 
-    this.heroAsteroidCollision();
-    this.heroMiniAsteroidCollision();
-    this.heroUfoCollision();
-    this.heroLifeCollision();
-    this.heroPointsCollision();
+    this.heroAsteroidCollision(); // * Invocamos al método para que se ejecute la colisión entre elementos.
+    this.heroMiniAsteroidCollision(); // * Invocamos al método para que se ejecute la colisión entre elementos.
+    this.heroUfoCollision(); // * Invocamos al método para que se ejecute la colisión entre elementos.
+    this.heroLifeCollision(); // * Invocamos al método para que se ejecute la colisión entre elementos.
+    this.heroPointsCollision(); // * Invocamos al método para que se ejecute la colisión entre elementos.
     
     // * Antes de ser un array, cada objeto individual era: this.miniAsteroid.moveMiniAsteroid();
     this.asteroidArray.forEach( (eachAsteroid) => {
