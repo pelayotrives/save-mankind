@@ -61,17 +61,22 @@
         <div id="scores-canvas">
           <h3 class="score-space">Points: <span id="points-score">0</span> points 🔥</h3>
           <h1>SAVE MANKIND</h1>
-          <h3>Lives: <span id="time-score">3</span> lives ❤️</h3>
+          <h3>Lives: <span id="lives-score">3</span> lives ❤️</h3>
         </div>
         <canvas id="my-canvas" width="800" height="800"></canvas>
-        <button id="back-button" class="game-button">Back</button>
+        <div id="bottom-canvas">
+          <button id="back-button" class="game-button">Back</button>
+          <img src="./images/speaker.png" alt="speaker icon" width="20px" height="20px">
+        </div>
         <!-- onclick="window.location.reload()" asignado a un "button", permite que volvamos a la página anterior de forma inmediata. -->
       </div>
 
       <!-- Game over -->
       <div id="gameover-screen" class="container">
         <h1>Wow! Nice game!</h1>
-        <h3>Your final score is: <span id="points-score">0</span> points</h3>
+        <img src="./images/ok.gif" alt="Gif - Nod of approval">
+        <h2>Your final score is: <span id="points-score-final">0</span> points 🔥</h2>
+        <p>Do you fancy another one?</p>
         <button id="restart-button" class="game-button">Play Again!</button>
       </div>
     </div>

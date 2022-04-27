@@ -111,7 +111,6 @@ input[type="text"] {
 }
 
 #back-button {
-  margin-top: 25px;
   padding: 15px 100px;
   display: flex;
   justify-content: center;
@@ -161,4 +160,34 @@ letter-spacing: 2px;
   color: red;
   font-weight: 500;
   letter-spacing: 4px;
+}
+
+#bottom-canvas {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  margin-top: 25px;
+}
+
+#bottom-canvas img {
+  margin-left: 75px;
+  transition-duration: 0.2s;
+}
+
+#bottom-canvas img:hover {
+  width: 25px;
+  height: 25px;
+  opacity: 0.5;
+  cursor: pointer;
+}
+
+#gameover-screen {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  margin-top: 12.5%;
 }
