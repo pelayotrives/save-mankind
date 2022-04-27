@@ -1,4 +1,5 @@
 class Sounds {
+
   constructor() {
     this.buttonSound = new Audio("./sounds/button.wav");
     this.backgroundMusic = new Audio("./sounds/background-music.mp3");
@@ -7,7 +8,7 @@ class Sounds {
     this.pointsSound = new Audio("./sounds/points.wav");
     this.lifeSound = new Audio("./sounds/life.wav");
   }
-
+  
   clickSound = () => {
     this.buttonSound.preload = "auto";
     this.buttonSound.play();

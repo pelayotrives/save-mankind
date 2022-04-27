@@ -13,6 +13,8 @@ class Game {
     this.ufoArray = [ new Ufo(canvas.width * 1.2, Math.random() * 764) ]; // * Necesitamos un array, ya no podemos hacer un this.ufo = new Ufo(); -----> Los parámetros de entrada vienen dados en que en el constructor de ufo.js, hemos definido dos parámetros de entrada para poder randomizar las posiciones de cada objeto de este array ufo.
     
     this.gameOn = true;
+    this.contador = 0;
+    this.contadorVidas = 3;
   }
 
   // *! - Métodos de adición al array y comparativa con el último elemento.
@@ -76,7 +78,14 @@ class Game {
           console.log("Colision con asteroide.");
           this.hitSound.injuryHit(); // * Como hemos creado un objeto hitSound de la clase Sounds, podemos acceder a sus métodos a través de this.hitSound.injuryHit(). Cada vez que colisione nuestro héroe sonará esto.
           this.asteroidArray.splice(index, 1); // * Con .splice(), el primer número es la posición del objeto del array que queremos quitar. El segundo es CUÁNTOS OBJETOS a partir de esa posición queremos quitar.
-      }
+          // ! ------------------
+          this.contadorVidas = this.contadorVidas - 2;
+          livesPoints.innerHTML = this.contadorVidas;
+          if ((livesPoints.innerHTML === "0") || (livesPoints.innerHTML < "0")) {
+            this.gameOn = false;
+            endGame();
+          }
+        }
     });
   }
 
@@ -89,7 +98,13 @@ class Game {
           console.log("Colision con mini-asteroide.");
           this.hitSound.injuryHit(); // * Como hemos creado un objeto hitSound de la clase Sounds, podemos acceder a sus métodos a través de this.hitSound.injuryHit(). Cada vez que colisione nuestro héroe sonará esto.
           this.miniAsteroidArray.splice(index, 1); // * Con .splice(), el primer número es la posición del objeto del array que queremos quitar. El segundo es CUÁNTOS OBJETOS a partir de esa posición queremos quitar.
-
+          // ! ------------------
+          this.contadorVidas = this.contadorVidas - 1;
+          livesPoints.innerHTML = this.contadorVidas;
+          if ((livesPoints.innerHTML === "0") || (livesPoints.innerHTML < "0")) {
+            this.gameOn = false;
+            endGame();
+          }
       }
     });
   }
@@ -103,7 +118,14 @@ class Game {
           console.log("Colision con OVNI.");
           this.hitSound.injuryHit(); // * Como hemos creado un objeto hitSound de la clase Sounds, podemos acceder a sus métodos a través de this.hitSound.injuryHit(). Cada vez que colisione nuestro héroe sonará esto.
           this.ufoArray.splice(index, 1); // * Con .splice(), el primer número es la posición del objeto del array que queremos quitar. El segundo es CUÁNTOS OBJETOS a partir de esa posición queremos quitar.
-      }
+          // ! ------------------
+          this.contadorVidas = this.contadorVidas - 3;
+          livesPoints.innerHTML = this.contadorVidas;
+          if ((livesPoints.innerHTML === "0") || (livesPoints.innerHTML < "0")) {
+            this.gameOn = false;
+            endGame();
+          }
+        }
     });
   }
 
@@ -116,7 +138,7 @@ class Game {
           console.log("Colision con vida.");
           this.hitSound.lifeHit(); // * Como hemos creado un objeto hitSound de la clase Sounds, podemos acceder a sus métodos a través de this.hitSound.injuryHit(). Cada vez que colisione nuestro héroe sonará esto.
           this.lifeArray.splice(index, 1); // * Con .splice(), el primer número es la posición del objeto del array que queremos quitar. El segundo es CUÁNTOS OBJETOS a partir de esa posición queremos quitar.
-      }
+        }
     });
   }
 
@@ -129,6 +151,15 @@ class Game {
           console.log("Colision con puntos.");
           this.hitSound.pointsHit(); // * Como hemos creado un objeto hitSound de la clase Sounds, podemos acceder a sus métodos a través de this.hitSound.injuryHit(). Cada vez que colisione nuestro héroe sonará esto.
           this.pointsArray.splice(index, 1); // * Con .splice(), el primer número es la posición del objeto del array que queremos quitar. El segundo es CUÁNTOS OBJETOS a partir de esa posición queremos quitar.
+          this.contador += 10;
+          modifyPoints.innerHTML = this.contador;
+          finalPoints.innerHTML = this.contador;
+          if (this.contador === 10) {
+            this.gameOn = false;
+            console.log("Juego parado.");
+            endGame();
+          }
+          console.log(this.contador);
       }
     });
   }
@@ -136,7 +167,7 @@ class Game {
   // Método gameLoop que ejecuta el juego una y otra vez.
  
   gameLoop = () => {
-
+    console.log("Juego andando.");
     // *! ---------------------------------------------------
     
     // 1.) Borrar el canvas
