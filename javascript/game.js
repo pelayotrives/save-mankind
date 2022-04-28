@@ -149,13 +149,17 @@ class Game {
           this.sound.injuryHit(); // * Como hemos creado un objeto sound de la clase Sounds, podemos acceder a sus métodos a través de this.sound.injuryHit(). Cada vez que colisione nuestro héroe sonará esto.
           this.kryptoniteArray.splice(index, 1); // * Con .splice(), el primer número es la posición del objeto del array que queremos quitar. El segundo es CUÁNTOS OBJETOS a partir de esa posición queremos quitar.
           // ! ------------------
-          // this.contadorVidas = this.contadorVidas - 3;
-          // livesPoints.innerHTML = this.contadorVidas;
-          // if ((livesPoints.innerHTML === "0") || (livesPoints.innerHTML < "0")) {
-          //   this.gameOn = false;
-          //   endGame();
-          // }
-          this.hero.heroY = canvas.height - this.hero.heroH;
+          if (this.contador >= 5) {
+            this.contador -= 5;
+          }
+          modifyPoints.innerHTML = this.contador;
+          finalPoints.innerHTML = this.contador;
+          if (this.hero.heroY >= 400) {
+            this.hero.heroY = canvas.height - this.hero.heroH;
+          } else {
+            this.hero.heroY = 0;
+          }
+          
         }
     });
   }
@@ -192,7 +196,7 @@ class Game {
           this.contador += 5;
           modifyPoints.innerHTML = this.contador;
           finalPoints.innerHTML = this.contador;
-          if (this.contador === 5) {
+          if (this.contador === 50) {
             // console.log("Juego parado.");
             this.gameOn = false;
             endGame();
