@@ -10,7 +10,7 @@
   </head>
   <body>
 
-    <div class="container">
+    <div class="container" id="main-container">
       <!-- Start Screen w/ instructions and titles. -->
       <div id="start-screen" class="container">
         <div id="title-box">
@@ -32,23 +32,21 @@
             in the down direction.
           </p>
           <p>
-            Avoid the UFOs and the asteroids. Once they hit you, you will
-            <span class="underline-text">lose a life</span>. No hearts, no game! :(
+            Mini-asteroids: <span class="underline-text">-1 life</span>. Asteroids: <span class="underline-text">-2 lives</span>. UFOs: <span class="underline-text">-3 lives</span> (insta-death). No hearts, no game! 😔
           </p>
           <p>
-            Touch the hearts and the coins to gain an
-            <span class="underline-text">extra life</span> or extra points
-            respectively.
+            Touch the hearts to gain an
+            <span class="underline-text">extra life</span>. Each coin gives you 5 points. 100 points makes you win the game! ✌🏻
           </p>
           <p>
-            You can have a total of 3 lives. If you touch a heart while you have
-            all of them, you won't earn anything.
+            You can have a total of <span class="bold-text">3 lives</span>. If you touch a heart while you have
+            all of them, you won't earn anything! 🙃
           </p>
         </div>
 
         <div id="name-box">
           <label for="name">Insert your alias:</label>
-          <input type="text" id="name" placeholder="Here!" maxlength="10" />
+          <input type="text" id="input-name" placeholder="Here!" value="" maxlength="10" />
           <br />
           <button id="start-button" class="game-button">Save Mankind!</button>
           <p id="copyright">Created by <a href="https://www.linkedin.com/in/pelayo-trives-pozuelo/" target="_blank">Pelayo Trives</a></p> 
@@ -66,14 +64,14 @@
         <canvas id="my-canvas" width="800" height="800"></canvas>
         <div id="bottom-canvas">
           <button id="back-button" class="game-button">Back</button>
-          <img src="./images/speaker.png" alt="speaker icon" width="20px" height="20px">
+          <img id="speaker-icon" src="./images/speaker.png" alt="speaker icon" width="20px" height="20px">
         </div>
         <!-- onclick="window.location.reload()" asignado a un "button", permite que volvamos a la página anterior de forma inmediata. -->
       </div>
 
       <!-- Game over -->
       <div id="gameover-screen" class="container">
-        <h1>Wow! Nice game!</h1>
+        <h1>Wow! Nice game, <span id="player-name"></span>!</h1>
         <img src="./images/ok.gif" alt="Gif - Nod of approval">
         <h2>Your final score is: <span id="points-score-final">0</span> points 🔥</h2>
         <p>Do you fancy another one?</p>
@@ -91,6 +89,7 @@
     <script src="./javascript/miniasteroid.js"></script>
     <script src="./javascript/points.js"></script>
     <script src="./javascript/ufo.js"></script>
+    <script src="./javascript/kryptonite.js"></script>
 
   </body>
 </html>
