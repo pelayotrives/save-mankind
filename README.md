@@ -2,6 +2,8 @@
 
 Save Mankind is a basic game built in JavaScript, HTML, and CSS. It is based on an infinite loop where the user must capture the maximum amount of points possible, not lose the lives of his character and avoid colliding with asteroids and UFOs. It is created to improve the management of classes in JS and to be able to create visual interfaces from canvas.
 
+Play it here ---> https://pelayotrives.github.io/save-mankind/
+
 
 ## 🚀 About Me
 Hi there! My name is Pelayo Trives. I am a multimedia developer who loves coding and learning new skills. Feel free to poke around on my profile!
@@ -117,5 +119,6 @@ muteAllSounds();
 
 #### Others
 https://trello.com/b/MpZKqoCJ/save-mankind
+https://docs.google.com/presentation/d/1u3x6uMVz5pjBvwr9Ov5HACEFweEXKiUynC-HXr5_R8w/edit?usp=sharing
 
 
