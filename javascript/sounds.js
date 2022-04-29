@@ -20,7 +20,8 @@ class Sounds {
     if (this.isMuted === false) {
       this.injurySound.preload = "auto";
       this.injurySound.play();
-      this.injurySound.volume = 1;
+      //   this.injurySound.volume = 1;
+      this.injurySound.volume = 0.1;
       this.injurySound.currentTime = 0; // Si ponemos currentTime a 0 después del play, se reinicia automáticamente y no hay espera, por ejemplo, si las colisiones son muy seguidas.
     }
   };
@@ -29,7 +30,8 @@ class Sounds {
     if (this.isMuted === false) {
       this.pointsSound.preload = "auto";
       this.pointsSound.play();
-      this.pointsSound.volume = 0.25;
+      // this.pointsSound.volume = 0.25;
+      this.pointsSound.volume = 0.1;
       this.pointsSound.currentTime = 0; // Si ponemos currentTime a 0 después del play, se reinicia automáticamente y no hay espera, por ejemplo, si las colisiones son muy seguidas.
     }
   };
@@ -38,7 +40,8 @@ class Sounds {
     if (this.isMuted === false) {
       this.lifeSound.preload = "auto";
       this.lifeSound.play();
-      this.lifeSound.volume = 0.6;
+      // this.lifeSound.volume = 0.6;
+      this.lifeSound.volume = 0.1;
       this.lifeSound.currentTime = 0; // Si ponemos currentTime a 0 después del play, se reinicia automáticamente y no hay espera, por ejemplo, si las colisiones son muy seguidas.
     }
   };
@@ -46,18 +49,19 @@ class Sounds {
   menuMusic = () => {
     this.mainMenuMusic.preload = "auto";
     this.mainMenuMusic.play();
-    this.mainMenuMusic.volume = 0.05;
+    // this.mainMenuMusic.volume = 0.05;
+    this.mainMenuMusic.volume = 0.1;
   };
 
   mainMusic = () => {
     this.backgroundMusic.preload = "auto";
     this.backgroundMusic.play();
-    this.backgroundMusic.volume = 0.4;
+    // this.backgroundMusic.volume = 0.4;
+    this.backgroundMusic.volume = 0.1;
     this.backgroundMusic.loop = true;
   };
 
   muteAllSounds = () => {
-      
     if (this.isMuted === true) {
       this.isMuted = false;
     } else {
