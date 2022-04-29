@@ -105,7 +105,7 @@ class Game {
         this.hero.heroX + this.hero.heroW > eachMiniAsteroidArr.miniAsteroidX &&
         this.hero.heroY < eachMiniAsteroidArr.miniAsteroidY + eachMiniAsteroidArr.miniAsteroidH &&
         this.hero.heroH + this.hero.heroY > eachMiniAsteroidArr.miniAsteroidY) {
-          console.log("Colision con mini-asteroide.");
+          // console.log("Colision con mini-asteroide.");
           this.sound.injuryHit(); // * Como hemos creado un objeto sound de la clase Sounds, podemos acceder a sus métodos a través de this.sound.injuryHit(). Cada vez que colisione nuestro héroe sonará esto.
           this.miniAsteroidArray.splice(index, 1); // * Con .splice(), el primer número es la posición del objeto del array que queremos quitar. El segundo es CUÁNTOS OBJETOS a partir de esa posición queremos quitar.
           // ! ------------------
@@ -125,7 +125,7 @@ class Game {
         this.hero.heroX + this.hero.heroW > eachUfoArr.ufoX &&
         this.hero.heroY < eachUfoArr.ufoY + eachUfoArr.ufoH &&
         this.hero.heroH + this.hero.heroY > eachUfoArr.ufoY) {
-          console.log("Colision con OVNI.");
+          // console.log("Colision con OVNI.");
           this.sound.injuryHit(); // * Como hemos creado un objeto sound de la clase Sounds, podemos acceder a sus métodos a través de this.sound.injuryHit(). Cada vez que colisione nuestro héroe sonará esto.
           this.ufoArray.splice(index, 1); // * Con .splice(), el primer número es la posición del objeto del array que queremos quitar. El segundo es CUÁNTOS OBJETOS a partir de esa posición queremos quitar.
           // ! ------------------
@@ -145,7 +145,7 @@ class Game {
         this.hero.heroX + this.hero.heroW > eachKryptoniteArr.kryptoniteX &&
         this.hero.heroY < eachKryptoniteArr.kryptoniteY + eachKryptoniteArr.kryptoniteH &&
         this.hero.heroH + this.hero.heroY > eachKryptoniteArr.kryptoniteY) {
-          console.log("Colision con kryptonita.");
+          // console.log("Colision con kryptonita.");
           this.sound.injuryHit(); // * Como hemos creado un objeto sound de la clase Sounds, podemos acceder a sus métodos a través de this.sound.injuryHit(). Cada vez que colisione nuestro héroe sonará esto.
           this.kryptoniteArray.splice(index, 1); // * Con .splice(), el primer número es la posición del objeto del array que queremos quitar. El segundo es CUÁNTOS OBJETOS a partir de esa posición queremos quitar.
           // ! ------------------
@@ -170,7 +170,7 @@ class Game {
         this.hero.heroX + this.hero.heroW > eachLifeArr.lifeX &&
         this.hero.heroY < eachLifeArr.lifeY + eachLifeArr.lifeH &&
         this.hero.heroH + this.hero.heroY > eachLifeArr.lifeY) {
-          console.log("Colision con vida.");
+          // console.log("Colision con vida.");
           this.sound.lifeHit(); // * Como hemos creado un objeto sound de la clase Sounds, podemos acceder a sus métodos a través de this.sound.injuryHit(). Cada vez que colisione nuestro héroe sonará esto.
           this.lifeArray.splice(index, 1); // * Con .splice(), el primer número es la posición del objeto del array que queremos quitar. El segundo es CUÁNTOS OBJETOS a partir de esa posición queremos quitar.
           if ((this.contadorVidas >= 1) && (this.contadorVidas < 3)) {
@@ -187,7 +187,7 @@ class Game {
         this.hero.heroX + this.hero.heroW > eachPointsArr.pointsX &&
         this.hero.heroY < eachPointsArr.pointsY + eachPointsArr.pointsH &&
         this.hero.heroH + this.hero.heroY > eachPointsArr.pointsY) {
-          console.log("Colision con puntos.");
+          // console.log("Colision con puntos.");
           this.sound.pointsHit(); // * Como hemos creado un objeto sound de la clase Sounds, podemos acceder a sus métodos a través de this.sound.injuryHit(). Cada vez que colisione nuestro héroe sonará esto.
           this.pointsArray.splice(index, 1); // * Con .splice(), el primer número es la posición del objeto del array que queremos quitar. El segundo es CUÁNTOS OBJETOS a partir de esa posición queremos quitar.
 
@@ -201,7 +201,7 @@ class Game {
             this.gameOn = false;
             endGame();
           }
-          console.log(this.contador);
+          // console.log(this.contador);
       }
     });
   }
@@ -221,7 +221,7 @@ class Game {
     // console.log(inputValue);
     // console.log(this.asteroidArray);
     // console.log(this.ufoArray);
-    console.log("Juego andando."); // * Comprobación de que el juego tira correctamente.
+    // console.log("Juego andando."); // * Comprobación de que el juego tira correctamente.
     // *! ---------------------------------------------------
     
     // 1.) Borrar el canvas
