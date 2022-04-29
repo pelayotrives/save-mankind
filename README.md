@@ -1,4 +1,3 @@
-
 # Save Mankind
 
 Save Mankind is a basic game built in JavaScript, HTML, and CSS. It is based on an infinite loop where the user must capture the maximum amount of points possible, not lose the lives of his character and avoid colliding with asteroids and UFOs. It is created to improve the management of classes in JS and to be able to create visual interfaces from canvas.
@@ -12,47 +11,109 @@ Hi there! My name is Pelayo Trives. I am a multimedia developer who loves coding
 
 Save Mankind is a basic game built in JavaScript, HTML, and CSS. It is based on an infinite loop where the user must capture the maximum amount of points possible, not lose the lives of his character and avoid colliding with asteroids and UFOs. It is created to improve the management of classes in JS and to be able to create visual interfaces from canvas.
 
+
 ## MVP
 
-1.) Game has all necessary assets, HTML, CSS styles and JS classes
+1.) Game has all necessary assets, HTML, CSS styles and JS classes. ✅
 
-2.) Asteroids and UFOs try to collide with the hero.
+2.) Asteroids and UFOs try to collide with the hero. ✅
 
-3.) There are lives and extra points available.
+3.) There are lives and extra points available. ✅
 
-4.) Buttons are activated and lead to their respective functions.
+4.) Buttons are activated and lead to their respective functions. ✅
 
-5.) Counters activated.
+5.) Counters activated. ✅
+
 
 ## Backlog
 
-1.) Add score and time
+1.) Add points and lives score. ✅
 
-2.) Get smoother animations
+2.) Introduce new elements that interact with the hero. ✅
+
+3.) Add sounds. ✅
+
+4.) Some control of those sounds (F.E.: mute them when necessary). ✅
+
 
 # Data Structure
+
 ## HTML5 & CSS3
+
 #### index.html
 #### style.css
+
+
 ## JavaScript
+
 ### asteroid.js
--- Functions to be included --
+drawAsteroid();
+moveAsteroid();
+
+### miniasteroid.js
+drawMiniAsteroid();
+moveMiniAsteroid();
+
 ### game.js
--- Functions to be included --
+addAsteroids();
+addMiniAsteroids();
+addUfos();
+addLife();
+addPoints();
+addKryptonite();
+heroAsteroidCollision();
+heroMiniAsteroidCollision();
+heroUfoCollision();
+heroKryptoniteCollision();
+heroLifeCollision();
+heroPointsCollision();
+showInput();
+gameLoop();
+
 ### hero.js
--- Functions to be included --
+drawHero();
+heroFriction();
+upHero();
+downHero();
+
 ### life.js
--- Functions to be included --
+drawLife();
+moveLife();
+
 ### main.js
--- Functions to be included --
+keyPressed();
+muteGame();
+startGame();
+reloadGame();
+endGame();
+
 ### points.js
--- Functions to be included --
+drawPoints();
+movePoints();
+
 ### ufo.js
--- Functions to be included --
+drawUfo();
+moveUfo();
+
+### kryptonite.js
+drawKryptonite();
+moveKryptonite();
+
+### sounds.js
+clickSound();
+injuryHit();
+pointsHit();
+lifeHit();
+menuMusic();
+mainMusic();
+muteAllSounds();
+
 
 ## 🔗 Links
 [![portfolio](https://img.shields.io/badge/my_portfolio-000?style=for-the-badge&logo=ko-fi&logoColor=white)](https://github.com/pelayotrives)
 [![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/pelayo-trives-pozuelo/)
+
+
 
 #### Others
 https://trello.com/b/MpZKqoCJ/save-mankind
